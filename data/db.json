@@ -1,0 +1,16 @@
+{
+    "blogs": [
+        {
+            "title": "My first blog",
+            "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae voluptate commodi dignissimos natus similique excepturi nostrum sequi tenetur doloribus accusamus aliquam provident, tempore qui, veniam nemo dicta mollitia dolorum totam, laudantium fugiat nesciunt molestias sint praesentium voluptatem? Velit quisquam consequuntur doloribus veniam ea quibusdam provident totam, voluptate fugiat hic, porro fugit odio tenetur. Tempora fugit ratione, tenetur totam consequatur excepturi. Dolor ex enim nihil, quos qui ipsum laboriosam provident minus quas ipsam sit quasi facere eaque labore ea, vero recusandae molestiae praesentium excepturi esse doloremque voluptate laborum incidunt beatae? Quis fuga, illo nemo odio ratione quos quisquam veniam nihil voluptates ipsam eaque aut quo natus debitis rerum aliquam facilis error facere? Consequatur voluptas rem ea eaque provident commodi nostrum ad quam. Placeat, consequatur laboriosam. Et nostrum officiis numquam aliquid esse ipsum! Id possimus blanditiis dignissimos rem libero itaque nihil consequuntur corporis quaerat, ad eum! Maiores, iusto labore. Enim atque obcaecati officiis libero quam sed voluptates, culpa recusandae est. Sequi, voluptates dolore. Beatae tempora dignissimos quasi ab voluptatum, itaque, ex voluptatibus, cum minima officia fugit. Molestias fugiat voluptate beatae ea, similique vero hic enim laboriosam facere facilis, labore molestiae. Aspernatur nisi illum repellendus fugiat laboriosam. Voluptatum nesciunt quae cum excepturi a!",
+            "author": "Mario",
+            "id": 1
+        },
+        {
+            "title": "Opening Party",
+             "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae voluptate commodi dignissimos natus similique excepturi nostrum sequi tenetur doloribus accusamus aliquam provident, tempore qui, veniam nemo dicta mollitia dolorum totam, laudantium fugiat nesciunt molestias sint praesentium voluptatem? Velit quisquam consequuntur doloribus veniam ea quibusdam provident totam, voluptate fugiat hic, porro fugit odio tenetur. Tempora fugit ratione, tenetur totam consequatur excepturi. Dolor ex enim nihil, quos qui ipsum laboriosam provident minus quas ipsam sit quasi facere eaque labore ea, vero recusandae molestiae praesentium excepturi esse doloremque voluptate laborum incidunt beatae? Quis fuga, illo nemo odio ratione quos quisquam veniam nihil voluptates ipsam eaque aut quo natus debitis rerum aliquam facilis error facere? Consequatur voluptas rem ea eaque provident commodi nostrum ad quam. Placeat, consequatur laboriosam. Et nostrum officiis numquam aliquid esse ipsum! Id possimus blanditiis dignissimos rem libero itaque nihil consequuntur corporis quaerat, ad eum! Maiores, iusto labore. Enim atque obcaecati officiis libero quam sed voluptates, culpa recusandae est. Sequi, voluptates dolore. Beatae tempora dignissimos quasi ab voluptatum, itaque, ex voluptatibus, cum minima officia fugit. Molestias fugiat voluptate beatae ea, similique vero hic enim laboriosam facere facilis, labore molestiae. Aspernatur nisi illum repellendus fugiat laboriosam. Voluptatum nesciunt quae cum excepturi a!",
+            "author": "Yoshi", 
+            "id": 2
+        }
+    ]
+}
