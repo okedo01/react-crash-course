@@ -15,6 +15,7 @@ const Home = () => {
 
     const [ name, setName ] = useState('okedo');
     const [ age, setAge ] = useState(25);
+    const [ count, setCount ] = useState(0);
 
     const handleClick = () => {
         setName('marvel');
@@ -23,10 +24,25 @@ const Home = () => {
         console.log(age);
     }
 
+    const increment = () => {
+        setCount(count + 1);
+        console.log(count);   
+    }
+
     return (
         <div className="contaimer">
-            <p>My name is { name } and I am { age } years old</p>
-            <button onClick={ handleClick }>Click me</button>
+                <div className="naming">
+                <p>My name is { name } and I am { age } years old</p>
+                <button onClick={ handleClick }>Click me</button>
+
+                <p>{ count }</p>
+                <button oncClick={ increment }>Count</button>
+            </div>
+{/* 
+            <div className="counting">
+            <p>{ count }</p>
+            <button oncClick={ increment }>Count</button>
+            </div> */}
         </div>
     );
 }
