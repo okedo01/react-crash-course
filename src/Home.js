@@ -19,6 +19,8 @@ const Home = () => {
     const [ text, setText ] = useState('');
     const [isVisible, setIsVisible] = useState(false);
     const [chars, setChars] = useState(0);
+    const [inputValue, setInputValue] = useState('');
+    const [todos, setTodos] = useState([]);
 
     const handleClick = () => {
         setName('marvel');
@@ -39,6 +41,24 @@ const Home = () => {
 
     const handleCharCounter = (e) => {
         setChars(e.target.value);
+    }
+
+    const handleInputValue = (e) => {
+        setInputValue(e.target.value);  
+    }
+
+    const handleSubmit = () => {
+        if(inputValue.trim()) {
+            setTodos([...todos, inputValue.trim()]);
+            setInputValue('');
+        }
+    }
+
+    const handleDelete = (index) => {
+        const updatedTodos = todos.filter(([], todo) => {
+            return todo !== index;
+        })
+        setTodos(updatedTodos);
     }
 
     return (
@@ -70,6 +90,26 @@ const Home = () => {
             <div className="counter">
                 <textarea onChange={handleCharCounter}></textarea>
                 <p>TODO: {chars.length}</p>
+            </div>
+            <br />
+
+            <div className="todos">
+                <input type="text" value={inputValue} onChange={handleInputValue}/>
+                <button onClick={handleSubmit}>Add Todo</button>
+                <ul>
+                    {(() => {
+                        const elements = [];
+                        todos.forEach((todo, index) => {
+                            elements.push(
+                                <li>
+                                    {todo}
+                                    <button onClick={(() => handleDelete(index))}>delete todo</button>
+                                </li>
+                            );
+                        });
+                        return elements;
+                    })()}
+                </ul>
             </div>
         </div>
     );
