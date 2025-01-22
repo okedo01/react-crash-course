@@ -17,21 +17,28 @@ const Home = () => {
     const [ age, setAge ] = useState(25);
     const [ count, setCount ] = useState(0);
     const [ text, setText ] = useState('');
+    const [isVisible, setIsVisible] = useState(false);
+    const [chars, setChars] = useState(0);
 
     const handleClick = () => {
         setName('marvel');
         setAge(30);
-        console.log(name);
-        console.log(age);
     }
 
     const increment = () => {
-        setCount(count + 1);
-        console.log(count);   
+        setCount(count + 1);  
     }
 
     const inputText = (e) => {
         setText(e.target.value);
+    }
+
+    const handleToggleVisibility = () => {
+        setIsVisible(!isVisible);
+    }
+
+    const handleCharCounter = (e) => {
+        setChars(e.target.value);
     }
 
     return (
@@ -51,6 +58,18 @@ const Home = () => {
             <div className="inputField">
                 <input type="text"  value={text} onChange={inputText}/>
                 <p>input text: { text }</p>
+            </div>
+            <br />
+
+            <div className="vissibility">
+                <button onClick={handleToggleVisibility}>Show/Hide me</button>
+                {isVisible && <p>Toggle me!</p>}
+            </div>
+            <br />
+
+            <div className="counter">
+                <textarea onChange={handleCharCounter}></textarea>
+                <p>TODO: {chars.length}</p>
             </div>
         </div>
     );
