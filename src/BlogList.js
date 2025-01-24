@@ -17,9 +17,9 @@
  
 // export default BlogList;
 
-const BlogList = (props) => {
-const blogs = props.blogs;
-const title = props.title;
+const BlogList = ({blogs, title}) => {
+// const blogs = props.blogs;
+// const title = props.title;
 
     return (
         <div className="blog-list">
