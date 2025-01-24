@@ -97,18 +97,12 @@ const Home = () => {
                 <input type="text" value={inputValue} onChange={handleInputValue}/>
                 <button onClick={handleSubmit}>Add Todo</button>
                 <ul>
-                    {(() => {
-                        const elements = [];
-                        todos.forEach((todo, index) => {
-                            elements.push(
-                                <li>
-                                    {todo}
-                                    <button onClick={(() => handleDelete(index))}>delete todo</button>
-                                </li>
-                            );
-                        });
-                        return elements;
-                    })()}
+                    {todos.map((todo, index) => (
+                        <li key={index}>
+                            {todo}
+                            <button onClick={() => handleDelete(index)}>delete todo</button>
+                        </li>
+                    ))}
                 </ul>
             </div>
         </div>
