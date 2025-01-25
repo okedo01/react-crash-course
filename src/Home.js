@@ -14,24 +14,21 @@ const Home = () => {
     //     </div>
     //  );
 
-    const [blogs, setBlogs] = useState([
-        {title: "My new website", body: "lorem ipsum...", author: "Marvel", id: 1}, 
-        {title: "Welcome party", body: "lorem ipsum...", author: "Stallion", id: 2},
-        {title: "Web devs top tips", body: "lorem ipsum...", author: "Okedo", id: 3}
-    ])
+    const [blogs, setBlogs] = useState(null);
 
     useEffect(() => {
-        console.log("use effect rendered");
-        console.log(blogs);
-    });
-    const handleDelete = (id) => {
-        console.log(`blog ${id} is deleted`);
-        setBlogs(blogs.filter((blog) => blog.id !== id));
-    }
+        fetch("http://localhost:8000/blogs")
+            .then(res => {
+                return res.json();
+            })
+            .then(data => {
+                setBlogs(data);
+            })
+    }, []);
 
     return (
-        <div className="contaimer">
-           <BlogList blogs={blogs} title="All blogs" handleDelete={handleDelete} /> 
+        <div className="container">
+           { blogs && <BlogList blogs={blogs} title="All blogs" /> }
         </div>
     );
 }
