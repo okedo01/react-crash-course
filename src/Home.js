@@ -16,6 +16,7 @@ const Home = () => {
 
     const [blogs, setBlogs] = useState([
         {title: "My new website", body: "lorem ipsum...", author: "Marvel", id: 1},
+        {title: "Web devs top tips", body: "lorem ipsum...", author: "Okedo", id: 3},  
         {title: "Welcome party", body: "lorem ipsum...", author: "Stallion", id: 2},
         {title: "Web devs top tips", body: "lorem ipsum...", author: "Okedo", id: 3}
     ])
@@ -23,6 +24,7 @@ const Home = () => {
     return (
         <div className="contaimer">
            <BlogList blogs={blogs} title="All blogs"/> 
+           <BlogList blogs={blogs.filter((blog) => blog.author === "Okedo")} title="Okedo's blogs"/> 
         </div>
     );
 }
