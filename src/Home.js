@@ -15,16 +15,19 @@ const Home = () => {
     //  );
 
     const [blogs, setBlogs] = useState([
-        {title: "My new website", body: "lorem ipsum...", author: "Marvel", id: 1},
-        {title: "Web devs top tips", body: "lorem ipsum...", author: "Okedo", id: 3},  
+        {title: "My new website", body: "lorem ipsum...", author: "Marvel", id: 1}, 
         {title: "Welcome party", body: "lorem ipsum...", author: "Stallion", id: 2},
         {title: "Web devs top tips", body: "lorem ipsum...", author: "Okedo", id: 3}
     ])
 
+    const handleDelete = (id) => {
+        console.log(`blog ${id} is deleted`);
+        setBlogs(blogs.filter((blog) => blog.id !== id));
+    }
+
     return (
         <div className="contaimer">
-           <BlogList blogs={blogs} title="All blogs"/> 
-           <BlogList blogs={blogs.filter((blog) => blog.author === "Okedo")} title="Okedo's blogs"/> 
+           <BlogList blogs={blogs} title="All blogs" handleDelete={handleDelete} /> 
         </div>
     );
 }
