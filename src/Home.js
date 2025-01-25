@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BlogList from "./BlogList";
 // import BlogList from "./BlogList";
 // import useFetch from "./useFetch";
@@ -20,6 +20,10 @@ const Home = () => {
         {title: "Web devs top tips", body: "lorem ipsum...", author: "Okedo", id: 3}
     ])
 
+    useEffect(() => {
+        console.log("use effect rendered");
+        console.log(blogs);
+    });
     const handleDelete = (id) => {
         console.log(`blog ${id} is deleted`);
         setBlogs(blogs.filter((blog) => blog.id !== id));
