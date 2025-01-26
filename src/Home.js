@@ -3,29 +3,25 @@ import BlogList from "./BlogList";
 
 const Home = () => {
     const [blogs, setBlogs] = useState(null);
-    const [count, setCount] = useState(0);
-
-    // useEffect(() => {
-    //     fetch("http://localhost:8000/blogs")
-    //         .then(res => {
-    //             return res.json();
-    //         })
-    //         .then(data => {
-    //             setBlogs(data);
-    //         })
-    // }, []);
+    const [isPending, setIsPending] = useState(true);
 
     useEffect(() => {
-        document.title = `Count: ${count}`;
-    }, [count]);
+        setTimeout(() => {
+            fetch("http://localhost:8000/blogs")
+            .then(res => {
+                return res.json();
+            })
+            .then(data => {
+                setBlogs(data);
+                setIsPending(false);
+            })
+        }, 1000)
+    }, []);
 
     return (
         <div className="container">
-           {/* { blogs && <BlogList blogs={blogs} title="All blogs" /> } */}
-           <div className="count">
-            <button onClick={() => setCount(count + 1)}>count</button>
-            <p>counts: {count} </p>
-           </div>
+            {isPending && <div>Loading...</div>}
+           { blogs && <BlogList blogs={blogs} title="All blogs" /> }
         </div>
     );
 }
